@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>guru.springframework.sfgpetclinic.model</OriginalElement>
+  <nodes>
+    <node x="223.0" y="212.0">guru.springframework.sfgpetclinic.model.PetType</node>
+    <node x="107.0" y="424.0">guru.springframework.sfgpetclinic.model.Owner</node>
+    <node x="22.0" y="424.0">guru.springframework.sfgpetclinic.model.Vet</node>
+    <node x="0.0" y="179.0">guru.springframework.sfgpetclinic.model.Person</node>
+    <node x="424.00000000000006" y="146.0">guru.springframework.sfgpetclinic.model.Pet</node>
+    <node x="236.0" y="0.0">guru.springframework.sfgpetclinic.model.BaseEntity</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="guru.springframework.sfgpetclinic.model.Person" target="guru.springframework.sfgpetclinic.model.BaseEntity">
+      <point x="0.0" y="-81.0" />
+      <point x="101.5" y="121.0" />
+      <point x="261.8333333333333" y="121.0" />
+      <point x="-51.666666666666686" y="48.0" />
+    </edge>
+    <edge source="guru.springframework.sfgpetclinic.model.Vet" target="guru.springframework.sfgpetclinic.model.Person">
+      <point x="0.0" y="-14.5" />
+      <point x="54.5" y="399.0" />
+      <point x="50.75" y="399.0" />
+      <point x="-50.75" y="81.0" />
+    </edge>
+    <edge source="guru.springframework.sfgpetclinic.model.Owner" target="guru.springframework.sfgpetclinic.model.Person">
+      <point x="0.0" y="-14.5" />
+      <point x="148.5" y="399.0" />
+      <point x="152.25" y="399.0" />
+      <point x="50.75" y="81.0" />
+    </edge>
+    <edge source="guru.springframework.sfgpetclinic.model.Pet" target="guru.springframework.sfgpetclinic.model.BaseEntity">
+      <point x="0.0" y="-114.0" />
+      <point x="533.5" y="121.0" />
+      <point x="365.16666666666663" y="121.0" />
+      <point x="51.66666666666663" y="48.0" />
+    </edge>
+    <edge source="guru.springframework.sfgpetclinic.model.PetType" target="guru.springframework.sfgpetclinic.model.BaseEntity">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="201.0" y="366.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
