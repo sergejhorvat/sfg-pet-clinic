@@ -15,10 +15,17 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
+    // Removed, so dependency are injected via annotation of classes
+    // OwnerServiceMap, PetServiceMap, VerServiceMap as @Service
+   /* public DataLoader() {
         ownerService = new OwnerServiceMap();
         vetService = new VetServiceMap();
 
+    }*/
+   // New constructor for dependency, spring context is use to load dependency
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
