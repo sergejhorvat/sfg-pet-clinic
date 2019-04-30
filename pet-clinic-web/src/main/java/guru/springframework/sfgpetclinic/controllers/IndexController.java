@@ -11,4 +11,9 @@ public class IndexController {
 
         return "index"; // returns template named index.html
     }
+    @RequestMapping("/oups")
+    public String oupsHandler(){
+        return "notImplemented";
+    }
+
 }
