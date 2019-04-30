@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class Vet extends Person {
 
+    // it has to be initialized before adding specialty from DataLoader
     private Set<Speciality> speciality = new HashSet<>();
 
     public Set<Speciality> getSpeciality() {
