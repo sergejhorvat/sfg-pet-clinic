@@ -3,7 +3,7 @@ package guru.springframework.sfgpetclinic.model;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-@MappedSuperclass
+@MappedSuperclass // it will not be created in DB it will be inherited
 public class Person extends BaseEntity{
 
     @Column(name = "first_name")
