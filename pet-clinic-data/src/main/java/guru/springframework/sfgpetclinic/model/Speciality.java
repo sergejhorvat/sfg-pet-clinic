@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 // Specialty class for Vet
 @Entity
-@Table(name="specialities")
+@Table(name="speciality")
 public class Speciality extends BaseEntity {
 
     // ID will be inherited from the BaseEntity class
