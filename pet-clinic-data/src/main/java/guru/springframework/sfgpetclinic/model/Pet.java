@@ -13,7 +13,7 @@ public class Pet extends BaseEntity {
     public String name;
 
     @ManyToOne
-    @Column(name="type_id")
+    @JoinColumn(name="type_id")
     private PetType petType;
 
     @ManyToOne  // Many pets can have one owner.

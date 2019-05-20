@@ -38,7 +38,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
                 object.getPets().forEach(pet -> {  // check for all pets
                     if (pet.getPetType() != null){ // if they do have PetType defined if not goto exception
                         if(pet.getPetType().getId() == null){  // PetType for pet has not been saved yet
-                            pet.setPetType(petTypeService.save(pet.getPetType()));  // its taken from object and saved to get an id.
+                            pet.setPetType(petTypeService.save(pet.getPetType()));  // its taken from object and saved
+                                                                                    // to get an id.
                         }
                     }else{ // if there is no PetType in Pet object throw exception
                         throw new RuntimeException("Pet Type is required!");
