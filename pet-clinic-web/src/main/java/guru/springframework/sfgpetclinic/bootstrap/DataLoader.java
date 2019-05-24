@@ -1,10 +1,7 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
-import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
-import guru.springframework.sfgpetclinic.services.SpecialtyService;
-import guru.springframework.sfgpetclinic.services.VetService;
+import guru.springframework.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +14,7 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialityService;
+    private final VisitService visitService;
 
     // Removed, so dependency are injected via annotation of classes
     // OwnerServiceMap, PetServiceMap, VerServiceMap as @Service
@@ -26,11 +24,12 @@ public class DataLoader implements CommandLineRunner {
 
     }*/
     // New constructor for dependency, spring context is use to load dependency
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -73,6 +72,7 @@ public class DataLoader implements CommandLineRunner {
         owner1.setAddress("123 Kostrena");
         owner1.setCity("Kostrena");
         owner1.setTelephone("213213213213");
+
         ownerService.save(owner1);
 
         Pet mikesPet = new Pet();
@@ -87,10 +87,9 @@ public class DataLoader implements CommandLineRunner {
         //owner2.setId(2L);
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
-        owner1.setAddress("Braće Milih 2");
-        owner1.setCity("Matulji");
-        owner1.setTelephone("22323213");
-        ownerService.save(owner2);
+        owner2.setAddress("Braće Milih 2");
+        owner2.setCity("Matulji");
+        owner2.setTelephone("22323213");
 
         Pet fionasCat = new Pet();
         fionasCat.setOwner(owner2);
@@ -98,6 +97,14 @@ public class DataLoader implements CommandLineRunner {
         fionasCat.setName("Some cat");
         fionasCat.setPetType(saveCatPetType);
         owner2.getPets().add(fionasCat);
+        ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty!");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners...");
 
