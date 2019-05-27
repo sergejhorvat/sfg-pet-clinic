@@ -73,7 +73,9 @@ public class DataLoader implements CommandLineRunner {
         owner1.setCity("Kostrena");
         owner1.setTelephone("213213213213");
 
-        ownerService.save(owner1);
+        // Use Lombok @Build pattern for creating objects!
+        //Owner owner3 = Owner.builder().firstName("Builder").lastName("Process").address("Nigdhezemska").city("Zion").build();
+        //ownerService.save(owner3);
 
         Pet mikesPet = new Pet();
         mikesPet.setPetType(saveDogPetType);
@@ -82,6 +84,7 @@ public class DataLoader implements CommandLineRunner {
         mikesPet.setName("Rosco");
         owner1.getPets().add(mikesPet); // set association on both ends Pet <-> Owner
 
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         //owner2.setId(2L);
