@@ -46,7 +46,8 @@ class OwnerControllerTest {
         owners.add(Owner.builder().id(1L).build());
         owners.add(Owner.builder().id(2L).build());
 
-        // standalone setup is very light setup (does not boot up server), for each test method it initialize a mock environment for controller
+        // standalone setup is very light setup (does not boot up server),
+        // for each test method it initialize a mock environment for controller
         mockMvc = MockMvcBuilders
                 .standaloneSetup(ownerController)
                 .build();
