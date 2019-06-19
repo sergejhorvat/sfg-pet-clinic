@@ -9,6 +9,10 @@
 
     <artifactId>pet-clinic-data</artifactId>
 
+    <properties>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,6 +51,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>5.3.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>

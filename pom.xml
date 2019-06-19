@@ -25,7 +25,9 @@
 
     <properties>
         <java.version>1.8</java.version>
+<!--
         <start-class>package guru.springframework.sfgpetclinic.SfgPetClinicApplication</start-class>
+    -->
     </properties>
 
     <dependencies>
