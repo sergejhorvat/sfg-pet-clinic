@@ -43,6 +43,7 @@ class OwnerControllerTest {
     @BeforeEach
     void setUp() {
         owners = new HashSet<>();
+
         owners.add(Owner.builder().id(1L).build());
         owners.add(Owner.builder().id(2L).build());
 
