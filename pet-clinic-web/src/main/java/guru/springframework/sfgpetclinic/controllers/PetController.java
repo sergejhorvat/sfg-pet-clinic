@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
-@RequestMapping("/pets")
 @Controller
+@RequestMapping("/pets")
 public class PetController {
 
     private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";

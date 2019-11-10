@@ -15,6 +15,13 @@ import javax.persistence.Table;
 @Table(name="types")
 public class PetType extends BaseEntity{
 
+    // Set up construcotr four builder() so it can use id property and name
+    @Builder
+    public PetType(Long id, String name){
+        super(id);
+        this.name = name;
+    }
+
     @Column(name="name")
     private String name;
 
