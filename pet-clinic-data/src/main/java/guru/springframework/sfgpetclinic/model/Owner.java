@@ -22,7 +22,10 @@ public class Owner extends Person {
         this.address = address;
         this.city = city;
         this.telephone = telephone;
-        this.pets = pets;
+
+        if(pets != null) {
+            this.pets = pets;
+        }
     }
 
 
@@ -39,4 +42,22 @@ public class Owner extends Person {
     // One owner can have multiple pets
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner") // Cascade type ALL means that if owner gets deleted the Pet is also deleted. So the child object is removed.
     private Set<Pet> pets = new HashSet<>(); // initialize object so we do not get null pointer exception
+
+    public Pet getPet(String name) {
+        return getPet(name,false);
+    }
+
+    public Pet getPet(String name, boolean ignoreNew) {
+        name = name.toLowerCase();
+        for(Pet pet : pets) {
+            if(!ignoreNew || !pet.isNew()){
+                String compName = pet.getName();
+                compName = compName.toLowerCase();
+                if(compName.equals(name)){
+                    return pet;
+                }
+            }
+        }
+        return null;
+    }
 }
